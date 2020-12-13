@@ -1,7 +1,8 @@
 # mini-w-Aviel-Drori 
 
     This project is a cryptocurrency mini wallet application with react-native.
-    The app consists of four screens: AppLoading Screen, Main Screen, Detail Screen and Account Screen 
+    The app consists of four screens: AppLoading Screen, Main Screen, Detail Screen and Account Screen.
+    It also has a qa automated e2e testing demo with appium.
 
 ## 1. AppLoading screen.
     This is a hidden screen that loads initial data after launching the app.
@@ -37,4 +38,13 @@
 <p float="left">
     <img src="https://github.com/avieldr/avieldr-mini-w-Aviel-Drori/blob/main/screenshots/Screenshot_20201130-021513_Expo.jpg" width="200"  />
 </p>
+
+
+## 5. Appium demo
+    The demo shows a small automated e2e test, which launches the app, entering the detail screen for bitcoin and try to purchase an amount of 100$ bitcoin.
+    Running instructions:
+        * install appium
+        * clone project
+        * connect an android device
+        * from mini-wallet/appium directory run "npm run android.app"
 
