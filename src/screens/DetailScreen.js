@@ -19,6 +19,7 @@ import { SELL,
     NEGATIVE_INPUT_MSG,
     NAN_INPUT_MSG
 } from '../../assets/strings'
+import { testProperties } from '../common/utils'
 
 const ERR_NEGATIVE_INPUT = 1
 const ERR_BALANCE_OVERFLOW_INPUT = 2
@@ -120,16 +121,14 @@ const DetailScreen = (props) => {
                     title={BUY}
                     icon={{ type: 'feather', name: 'arrow-up', color: 'white'}}
                     onPress={() => setState({ ...state, isDialogVisible: true, op: BUY, message: BUY_DIALOG_MESSAGE })}
-                    accessible= {true}
-                    accessibilityLabel= {'detail-screen-buy-button'}
+                    {...testProperties('detail-screen-buy-button')}
                 />
                 <Button 
                     buttonStyle={[styles.button, { backgroundColor: '#8EA8C0' }]} 
                     title={SELL}
                     icon={{ type: 'feather', name: 'arrow-down', color: 'white'}}
                     onPress={() => setState({ ...state, isDialogVisible: true, op: SELL, message: SELL_DIALOG_MESSAGE })}
-                    accessible= {true}
-                    accessibilityLabel= {'detail-screen-sell-button'}
+                    {...testProperties('detail-screen-sell-button')}
                 />
             </View>
         </View>

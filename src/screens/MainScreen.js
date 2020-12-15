@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { useTheme } from '../components/ThemeManager'
 import { fetchCurrencies, updateLastMinimized } from '../actions'
 import Blocker from '../components/Blocker'
+import { testProperties } from '../common/utils'
 
 const COINS_TO_DISPLAY = [
     CURRENCY_TYPES.BITCOIN,
@@ -96,8 +97,7 @@ const MainScreen = (props) => {
             onPress={() => {
                 navigation.navigate('detail', { coin: coin })
                 }}
-            accessible= {true}
-            accessibilityLabel= {"main-screen-tile-" + coin}
+            { ...testProperties("main-screen-tile-" + coin, true) }
         >
             <View style={styles.coinTileTitle}>
                 <Image source={CURRENCY_ICONS[coin]} style={styles.tileIcon} />
@@ -122,8 +122,7 @@ const MainScreen = (props) => {
         blockerState.block ? <Blocker onButtonPress={() => setBlockerState({ block: false })}/>
         : <View
         style={styles.container}
-        accessible= {true}
-        accessibilityLabel= {"main-screen"}
+        { ...testProperties("main-screen") }
         >
             {totalAmountComponent()}
             {currenciesComponent()}

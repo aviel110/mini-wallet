@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { testProperties } from '../common/utils'
 
 class DialogInput extends PureComponent{
   constructor(props){
@@ -67,15 +68,14 @@ class DialogInput extends PureComponent{
         <View style={[styles.container, {...modalStyleProps}]}  >
           <TouchableOpacity style={styles.container} activeOpacity={1}>
             <View style={[styles.modal_container, {...dialogStyleProps}]} 
-            accessible= {true}
-            accessibilityLabel= {'detail-screen-modal-container'}
+            {...testProperties('detail-screen-modal-container', true)}
             >
               <View style={styles.modal_body} >
                 <Text style={styles.title_modal}>{title}</Text>
                 <Text style={[errMsg ? [styles.message_modal, { color: this.props.errMessageColor || 'black' }] : {height:0} ]}>{errMsg}</Text>
                 <TextInput style={styles.input_container}
-                  accessible= {true}
-                  accessibilityLabel= {'detail-screen-modal-input'}
+                  testID='detail-screen-modal-input'
+                  accessibilityLabel='detail-screen-modal-input'
                   autoCorrect={(textProps && textProps.autoCorrect==false)?false:true}
                   autoCapitalize={(textProps && textProps.autoCapitalize)?textProps.autoCapitalize:'none'}
                   clearButtonMode={(textProps && textProps.clearButtonMode)?textProps.clearButtonMode:'never'}
@@ -94,15 +94,13 @@ class DialogInput extends PureComponent{
               </View>
               <View style={styles.btn_container}>
                 <TouchableOpacity style={styles.touch_modal}
-                  accessible= {true}
-                  accessibilityLabel= {'detail-screen-modal-close'}
+                  {...testProperties('detail-screen-modal-close')}
                   onPress={this.handleOnCloseDialog}>
                   <Text style={styles.btn_modal_left}>{cancelText}</Text>
                 </TouchableOpacity>
                 <View style={styles.divider_btn}></View>
                 <TouchableOpacity  style={styles.touch_modal}
-                accessible= {true}
-                accessibilityLabel= {'detail-screen-modal-submit'}
+                {...testProperties('detail-screen-modal-submit')}
                   onPress={this.handleSubmit}>
                   <Text style={styles.btn_modal_right}>{submitText}</Text>
                 </TouchableOpacity>

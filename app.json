@@ -17,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aviel110.wallet"
     },
     "android": {
       "package": "com.aviel110.wallet",

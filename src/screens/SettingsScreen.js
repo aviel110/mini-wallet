@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, SectionList, TouchableOpacity, Image } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { useTheme } from '../components/ThemeManager'
-
+import { testProperties } from '../common/utils'
 
 
 
@@ -133,9 +133,8 @@ const SettingsScreen = () => {
     }
     
     return <View 
-        style={{ flex: 1, paddingTop: 24 }}  
-        accessible= {true}
-        accessibilityLabel= {"settings-screen-desc"}
+        style={{ flex: 1, paddingTop: 24 }}
+        {...testProperties('settings-screen-desc')}
     >
         <View style={styles.headerContainer}>
             <View style={{ flex: 1 }}>

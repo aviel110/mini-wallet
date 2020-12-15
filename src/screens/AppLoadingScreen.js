@@ -3,6 +3,7 @@ import { AppLoading } from 'expo';
 import { connect } from 'react-redux'
 import { fetchCurrencies, setBalance } from '../actions'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { testProperties } from '../common/utils'
 
 
 const AppLoadingScreen = (props) => {
@@ -28,8 +29,7 @@ const AppLoadingScreen = (props) => {
 
     return (
         <AppLoading
-        accessible= {true}
-        accessibilityLabel= {"apploading-screen-desc"}
+        {...testProperties('apploading-screen-desc')}
         startAsync={_loadAssetsAsync}
         onFinish={() => props.navigation.navigate('body')}
         onError={console.warn}
